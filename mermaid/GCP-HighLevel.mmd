@@ -1,0 +1,15 @@
+architecture
+    group hadoop(cloud)[Hadoop]
+        service hdfs(disk)[HDFS]
+        service hbase(database)[HBase]                
+        service spark(server)[Spark Streaming]
+        service java(app)[Custom JAR]
+
+    group gcp(cloud)[Google Cloud Platform]
+        service gcs(disk)[Google Cloud Storage]
+        service bigtable(database)[Cloud Bigtable]
+
+    hdfs:R -- L:java
+    java:R -- L:gcs
+    hbase:R -- L:spark
+    spark:R -- L:bigtable
