@@ -1,7 +1,7 @@
 {
   "type": "excalidraw",
   "version": 2,
-  "source": "https://excalidraw.com",
+  "source": "https://excalidraw-jetbrains-plugin",
   "elements": [
     {
       "id": "YlDhzl1u24QFgMPkMSwwd",
@@ -266,7 +266,7 @@
         ],
         [
           -4.440892098500626e-15,
-          15.291115069325967
+          15.291115069325969
         ],
         [
           -18.173687696375207,
@@ -868,8 +868,8 @@
     },
     {
       "type": "text",
-      "version": 984,
-      "versionNonce": 1507235928,
+      "version": 985,
+      "versionNonce": 1638288146,
       "isDeleted": false,
       "id": "XWXtQG7sXtV_Ga6CA8T3D",
       "fillStyle": "solid",
@@ -882,7 +882,7 @@
       "y": 619.1953469368434,
       "strokeColor": "#ffffff",
       "backgroundColor": "#4c6ef5",
-      "width": 141.08656983430404,
+      "width": 141.15234375,
       "height": 29.065044429384518,
       "seed": 1226059560,
       "groupIds": [
@@ -893,14 +893,14 @@
       "fontSize": 24.095398416309322,
       "fontFamily": 3,
       "text": "Enterprise",
-      "baseline": 57.2199787261781,
+      "baseline": 23,
       "textAlign": "left",
       "verticalAlign": "top",
       "index": "b0A",
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1737089047338,
+      "updated": 1743051159472,
       "link": null,
       "locked": false,
       "containerId": null,
@@ -1034,7 +1034,7 @@
       "type": "text",
       "x": 623,
       "y": 513,
-      "width": 75.09120178222656,
+      "width": 65.01554870605469,
       "height": 48.000000000000036,
       "angle": 0,
       "strokeColor": "#1e1e1e",
@@ -1049,11 +1049,11 @@
       "index": "b0E",
       "roundness": null,
       "seed": 1273417304,
-      "version": 84,
-      "versionNonce": 1190513192,
+      "version": 85,
+      "versionNonce": 721757966,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1737089143832,
+      "updated": 1743051159474,
       "link": null,
       "locked": false,
       "text": "load \nbalancer",
@@ -1064,14 +1064,15 @@
       "containerId": null,
       "originalText": "load \nbalancer",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 42
     },
     {
       "id": "zUtBHQBT6ebcFfVpOb4aV",
       "type": "text",
       "x": 767,
       "y": 379,
-      "width": 156.04002380371094,
+      "width": 133.828125,
       "height": 25,
       "angle": 0,
       "strokeColor": "#1e1e1e",
@@ -1086,11 +1087,11 @@
       "index": "b0F",
       "roundness": null,
       "seed": 1627784744,
-      "version": 48,
-      "versionNonce": 994837080,
+      "version": 49,
+      "versionNonce": 1351555282,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1737089140066,
+      "updated": 1743051159475,
       "link": null,
       "locked": false,
       "text": "application layer",
@@ -1101,14 +1102,15 @@
       "containerId": null,
       "originalText": "application layer",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 19
     },
     {
       "id": "9sf2tt86J1LWZwpuI3DXq",
       "type": "text",
       "x": 1086,
       "y": 463,
-      "width": 108.37999725341797,
+      "width": 85.546875,
       "height": 50,
       "angle": 0,
       "strokeColor": "#1e1e1e",
@@ -1123,11 +1125,11 @@
       "index": "b0G",
       "roundness": null,
       "seed": 899254872,
-      "version": 22,
-      "versionNonce": 492050728,
+      "version": 23,
+      "versionNonce": 371791182,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1737089136329,
+      "updated": 1743051159475,
       "link": null,
       "locked": false,
       "text": "distributed\ncache",
@@ -1138,7 +1140,8 @@
       "containerId": null,
       "originalText": "distributed\ncache",
       "autoResize": true,
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 44
     },
     {
       "id": "ZB_ro3gaHo2Y4NK5Ym4MK",
@@ -1198,9 +1201,7 @@
     }
   ],
   "appState": {
-    "gridSize": 20,
-    "gridStep": 5,
-    "gridModeEnabled": false,
+    "gridSize": null,
     "viewBackgroundColor": "#ffffff"
   },
   "files": {}

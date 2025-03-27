@@ -1,15 +1,21 @@
-architecture
-    group hadoop(cloud)[Hadoop]
-        service hdfs(disk)[HDFS]
-        service hbase(database)[HBase]                
-        service spark(server)[Spark Streaming]
-        service java(app)[Custom JAR]
+---
+config:
+      theme: redux
+---
+flowchart TD
+    subgraph hadoop[Hadoop]
+        hdfs(HDFS)
+        hbase(HBase)
+        spark(Spark Streaming)
+        java(Custom JAR)
+    end
 
-    group gcp(cloud)[Google Cloud Platform]
-        service gcs(disk)[Google Cloud Storage]
-        service bigtable(database)[Cloud Bigtable]
+    subgraph gcp[Google Cloud Platform]
+        gcs(Google Cloud Storage)
+        bigtable(Cloud Bigtable)
+    end
 
-    hdfs:R -- L:java
-    java:R -- L:gcs
-    hbase:R -- L:spark
-    spark:R -- L:bigtable
+    hdfs --- java
+    java --- gcs
+    hbase --- spark
+    spark --- bigtable
