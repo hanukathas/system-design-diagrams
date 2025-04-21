@@ -1,0 +1,48 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw-jetbrains-plugin",
+  "elements": [
+    {
+      "id": "vRzii6Y-_F2JIFvDSY5td",
+      "type": "text",
+      "x": 355.43701171875,
+      "y": 165.73760986328125,
+      "width": 2132.1875,
+      "height": 896.572602216583,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 214000260,
+      "version": 3128,
+      "versionNonce": 1748650500,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1745248161493,
+      "link": null,
+      "locked": false,
+      "text": "Describe a time when you had to completely re-architect a system. What was the catalyst, and how did you manage the transition while keeping the system running?\n\n1. re design was a necessity immediately after moving to GCP -> CSA and SLA impacts were higher due to inefficient design, older ones that were not built for the scale\n2. but these applications were supporting live traffic so had to solve with zero downtime requirements. Additionally hot spotting was a major problem. additionally retry cut offs were lesser than scanning durations. \n2.5 additionally we wanted to applications to support multi tenancy and caching for read after write \n3. this means, tomb-stoning and versioning of data than real updates \n4. study access patterns and volume of data accessed based on time period:\n    a. how long do we need to support the existing data and how quickly can we retire?\n    b. customer admin feedbacks and separate GCS bucket access? Are we running OLAP use cases, especially for metadata, fanout and filesystem catalogs \n    c. what will the new system look like? how quickly can we do it?\n5. Challenges:\n    a. leadership buy in \n    b. prioritization \n    c. application vs platform expertise mismatch \n    d. transition planning \n6. Implementation:\n    1. staged approach: existing data will have a tomb-stone version\n    2. centralized schema management decision to be enforced here too. Immutable but versioned. Write through cache but version data changes -> updates only for security use cases \n    3. managed by bigtable. set bigtable expiry to delete older versions automatically \n    4. target hotspot tables. partition based keys with salting. supports \n    5. key suffixed for read vs write replicas \n    6. SLA evaluated based on 99% scan times \n    7. contract negotiations based on data sizes \n7. Lessons Learned:\n    a. multi tenancy applications bring down hotspot saturation scenarios to zero for OLTP and cache. \n    b. determining partition strategy is important -> not just one key -> NOJOKE\n    c. implement circuit breakers when call volume hits a high volume \n    d. wherever data base makes single threaded call, use routing models to give higher scanning values. local caching may not be sufficient \n8. impact: zero downtimes on these applications. planned capacity additions. \n9. Win: presented in GCP conferences \n10. Scalability:\n    1. all bt tables and instances have auto scaling enabled. but provisioned to support 90% traffic. spot purchase costs due to autoscaling come at a permium\n\n\n\n",
+      "fontSize": 19.92383560481297,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 887.9999999999992,
+      "containerId": null,
+      "originalText": "Describe a time when you had to completely re-architect a system. What was the catalyst, and how did you manage the transition while keeping the system running?\n\n1. re design was a necessity immediately after moving to GCP -> CSA and SLA impacts were higher due to inefficient design, older ones that were not built for the scale\n2. but these applications were supporting live traffic so had to solve with zero downtime requirements. Additionally hot spotting was a major problem. additionally retry cut offs were lesser than scanning durations. \n2.5 additionally we wanted to applications to support multi tenancy and caching for read after write \n3. this means, tomb-stoning and versioning of data than real updates \n4. study access patterns and volume of data accessed based on time period:\n    a. how long do we need to support the existing data and how quickly can we retire?\n    b. customer admin feedbacks and separate GCS bucket access? Are we running OLAP use cases, especially for metadata, fanout and filesystem catalogs \n    c. what will the new system look like? how quickly can we do it?\n5. Challenges:\n    a. leadership buy in \n    b. prioritization \n    c. application vs platform expertise mismatch \n    d. transition planning \n6. Implementation:\n    1. staged approach: existing data will have a tomb-stone version\n    2. centralized schema management decision to be enforced here too. Immutable but versioned. Write through cache but version data changes -> updates only for security use cases \n    3. managed by bigtable. set bigtable expiry to delete older versions automatically \n    4. target hotspot tables. partition based keys with salting. supports \n    5. key suffixed for read vs write replicas \n    6. SLA evaluated based on 99% scan times \n    7. contract negotiations based on data sizes \n7. Lessons Learned:\n    a. multi tenancy applications bring down hotspot saturation scenarios to zero for OLTP and cache. \n    b. determining partition strategy is important -> not just one key -> NOJOKE\n    c. implement circuit breakers when call volume hits a high volume \n    d. wherever data base makes single threaded call, use routing models to give higher scanning values. local caching may not be sufficient \n8. impact: zero downtimes on these applications. planned capacity additions. \n9. Win: presented in GCP conferences \n10. Scalability:\n    1. all bt tables and instances have auto scaling enabled. but provisioned to support 90% traffic. spot purchase costs due to autoscaling come at a permium\n\n\n\n",
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
